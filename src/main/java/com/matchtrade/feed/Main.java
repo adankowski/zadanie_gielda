@@ -1,19 +1,11 @@
 package com.matchtrade.feed;
 
-import com.matchtrade.feed.coinbase.CoinbaseClient;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
-
+@SpringBootApplication
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
-
-        final TickerPrinter tickPrinter = new TickerPrinter();
-
-        final CoinbaseClient client = new CoinbaseClient("wss://ws-feed.pro.coinbase.com", List.of("BTC-USD", "ETH-USD"));
-        client.addListener(tickPrinter);
-        client.connect();
-
-
-        Thread.sleep(10000);
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
     }
 }

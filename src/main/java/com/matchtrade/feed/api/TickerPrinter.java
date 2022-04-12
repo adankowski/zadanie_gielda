@@ -1,9 +1,11 @@
-package com.matchtrade.feed;
+package com.matchtrade.feed.api;
 
 import com.matchtrade.feed.coinbase.TickerMessage;
+import org.springframework.stereotype.Service;
 
 import java.util.function.Consumer;
 
+@Service
 public class TickerPrinter implements Consumer<TickerMessage> {
 
     @Override
