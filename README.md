@@ -8,7 +8,7 @@ zawierające informacje o zmianie ceny dla danego instrumentu (pole `symbol`).
 1. Należy stworzyć mechanizm, który dla przychodzących danych umożliwi przechowywanie osobno
 dla każdego instrumentu ostatniej ceny `bid` i `ask` oraz `timestamp` otrzymanego wpisu z giełdy.
 Format przechowywanej wiadomości: `symobl`, `askPrice`, `bidPrice`, `timestamp`.
-2. Stworzyć mechanizm umożliwiający pobieranie tzw. 'spread' czyli różnicy w cenach pomiędzy 'ask' i 'bid'.
+2. Stworzyć mechanizm umożliwiający pobieranie tzw. `spread` czyli różnicy w cenach pomiędzy `ask` i `bid`.
 3. Stworzyć kontroler umożliwiający pobranie ostatniego kwotowania dla danego symbolu.
 
 
