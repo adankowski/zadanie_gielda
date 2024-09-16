@@ -1,41 +1,28 @@
 package com.matchtrade.feed.coinbase;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SubscriptionMessage {
-    private static final String TYPE = "subscribe";
+  private static final String TYPE = "subscribe";
 
-    private final String type = TYPE;
-    @JsonProperty("product_ids")
-    private List<String> symbols;
-    private List<Object> channels;
+  private final String type = TYPE;
 
-    public static SubscriptionMessage tickerSubscription(List<String> symbols) {
-        SubscriptionMessage subscription = new SubscriptionMessage();
-        subscription.setSymbols(symbols);
-        subscription.setChannels(List.of(new Channel("ticker", symbols)));
-        return subscription;
-    }
+  @JsonProperty("product_ids")
+  private List<String> symbols;
 
-    public String getType() {
-        return type;
-    }
+  private List<Object> channels;
 
-    public List<String> getSymbols() {
-        return symbols;
-    }
-
-    public void setSymbols(List<String> symbols) {
-        this.symbols = symbols;
-    }
-
-    public List<Object> getChannels() {
-        return channels;
-    }
-
-    public void setChannels(List<Object> channels) {
-        this.channels = channels;
-    }
+  public static SubscriptionMessage tickerSubscription(List<String> symbols) {
+    SubscriptionMessage subscription = new SubscriptionMessage();
+    subscription.setSymbols(symbols);
+    subscription.setChannels(List.of(new Channel("ticker", symbols)));
+    return subscription;
+  }
 }

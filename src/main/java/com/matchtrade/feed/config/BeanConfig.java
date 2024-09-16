@@ -13,7 +13,9 @@ public class BeanConfig {
     @Bean
     public CoinbaseClient getCoinbaseClient(TickerPrinter tickerPrinter){
 
-        final CoinbaseClient client = new CoinbaseClient("wss://ws-feed.pro.coinbase.com", Arrays.asList("BTC-USD", "ETH-USD"));
+    final CoinbaseClient client =
+        new CoinbaseClient(
+            "wss://ws-feed.exchange.coinbase.com", Arrays.asList("BTC-USD", "ETH-USD"));
         client.addListener(tickerPrinter);
         client.connect();
 

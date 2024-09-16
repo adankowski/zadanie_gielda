@@ -9,7 +9,11 @@ public class Channel {
     @JsonProperty("product_ids")
     private List<String> symbols;
 
-    public Channel(String name, List<String> symbols) {
+  public Channel(String name) {
+    this.name = name;
+  }
+
+  public Channel(String name, List<String> symbols) {
         this.name = name;
         this.symbols = symbols;
     }
